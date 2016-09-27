@@ -147,7 +147,8 @@
 		"bin",
 		"script",
 		"tmp",
-		"log"
+		"log",
+		"*.meteor"
 	],
 	"font_face": "Sofia Pro Semi Bold",
 	"font_options": "subpixel_antialias",
