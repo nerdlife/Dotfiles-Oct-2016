@@ -1,0 +1,15 @@
+{
+  // Determines whether GitGutter ignores whitespace in modified files.
+  // Set "none" to ensure whitespace is considered in the diff
+  // Set "all" to ignore all white space
+  // Set "eol" to only ignore whitespace at the end of lines
+  "ignore_whitespace": "all",
+
+  // Determines whether GitGutter will show informations in the status bar
+  // Set "none" to hide these informations
+  // Set "default" to show in the status bar what you are comparing
+  // against, how many lines have been inserted or modified and how many regions
+  // have been deleted.
+  // Set "all" to also show on what branch you are
+  "show_status": "all"
+}

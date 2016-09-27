@@ -1,0 +1,13 @@
+{
+  "open_tasks_bullet": "☐", // options: - | ❍ | ❑ | ■ | □ | ☐ | ▪ | ▫ | – | — | ≡ | → | › | [ ]
+  "done_tasks_bullet": "✔", // options: + | ✓ | ✔ | √ | [x] | ☑
+  "color_scheme": "Packages/PlainTasks/tasks-dark.hidden-tmTheme",
+  "done_tag": false, // related to @cancelled as well
+  "project_tag": false, // if true - postfix archived task with project tag, if false - prefix
+  "font_size": 22,
+  "font_face": "Coolvetica",
+  "date_format": "",
+  "line_numbers": false,
+  "tab_size": 8,
+}
+

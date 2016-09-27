@@ -1,0 +1,58 @@
+[
+        // Sidebar Enhancements
+        {"id": "side-bar-files-open-with",
+                "children":
+                [
+
+                        //application 1
+                        {
+                                "caption": "Chrome",
+                                "id": "side-bar-files-open-with-chrome",
+
+                                "command": "side_bar_files_open_with",
+                                "args": {
+                                                                        "paths": [],
+                                                                        "application": "Google Chrome.app", // OSX
+                                                                        "extensions":"psd|png|jpg|jpeg|html|erb|css|js"  //any file with these extensions
+                                                                }
+                        },
+
+                        {
+                                "caption": "Safari",
+                                "id": "side-bar-files-open-with-safari",
+
+                                "command": "side_bar_files_open_with",
+                                "args": {
+                                                                        "paths": [],
+                                                                        "application": "Safari.app", // OSX
+                                                                        "extensions":"psd|png|jpg|jpeg|html|erb|css|js"  //any file with these extensions
+                                                                }
+                        }
+                ]
+        },
+
+        //  Browser Refresh Package
+    {
+      "keys": ["super+shift+r"], "command": "browser_refresh", "args": {
+        "auto_save": true,
+        "delay": 0.0,
+        "activate": true,
+        "browsers" : ["chrome"]
+      }
+    },
+
+
+/*
+On OS X, basic text manipulations (left, right, command+left, etc) make use of the system key bindings,
+and don't need to be repeated here. Anything listed here will take precedence, however.
+*/
+        
+        // Close Window
+        { "keys": ["super+w"], "command": "close" },
+
+        // So I can use comand+1 to check screen size in chrome
+         { "keys": ["ctrl+shift+o"], "command": "focus_group", "args": { "group": 0 } },
+         { "keys": ["super+ctrl+o+d"], "command": "find_under_expand" }
+]
+
+

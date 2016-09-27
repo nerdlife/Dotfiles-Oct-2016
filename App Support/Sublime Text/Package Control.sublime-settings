@@ -1,0 +1,48 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"1337 Color Scheme",
+		"All Autocomplete",
+		"Autoprefixer",
+		"Block Cursor Everywhere",
+		"Bootstrap 3 Snippets",
+		"BracketHighlighter",
+		"Clickable URLs",
+		"Color Highlighter",
+		"CSS Snippets",
+		"Dayle Rees Color Schemes",
+		"Default File Type",
+		"Emmet",
+		"Fix Mac Path",
+		"GitGutter",
+		"Gitignored File Excluder",
+		"HTML-CSS-JS Prettify",
+		"HTML5",
+		"JavaScript Completions",
+		"JavaScript Snippets",
+		"JavaScriptFunctionDefinition",
+		"jQuery",
+		"jQuery Snippets pack",
+		"JSHint",
+		"MarkdownLight",
+		"Meteor Autocomplete (TernJS)",
+		"Meteor Snippets",
+		"Minifier",
+		"Package Control",
+		"PlainTasks",
+		"Sass",
+		"Seti_UI",
+		"Seti_UX",
+		"SideBarEnhancements",
+		"SideBarGit",
+		"SublimeCodeIntel",
+		"SublimeLinter",
+		"TernJS",
+		"Themr",
+		"View In Browser"
+	]
+}
