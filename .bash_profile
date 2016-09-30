@@ -1,50 +1,15 @@
-# Quick git for my solo projects
+###########################
+# CUSTOM SCRIPTS
+###########################
+
+# Quick git add+commit+push
 function gpush() {
     git add .
     git commit -a -m "$1"
     git push
 }
 
-alias c="clear"
-alias be="bundle exec"
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias desk="cd ~/Desktop"
-alias profile="source ~/.bash_profile"
-# Git Alias
-alias ga="git add ."
-alias gc="git commit -a -m "$1""
-alias gp="git push"
-alias gs="git status"
-# Rails alias
-alias dbnew="be rake db:drop db:create db:migrate"
-alias bund="be bundle install"
-alias se="rails s"
-# Meteor alias
-alias mr="meteor reset"
-alias m="meteor"
-
-    
-# Empty the Trash on all mounted volumes and the main HDD.
-# Also, clear Apple’s System Logs to improve shell startup speed.
-# Finally, clear download history from quarantine. https://mths.be/bum
-alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
-
-# Kill all the tabs in Chrome to free up memory
-# [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
-alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
-
-# Lock the screen 
-alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
-
-# New directory and cd into it
-function mkd() {
-    mkdir -p "$@" && cd "$_";
-}
-
-# `s` with no arguments opens the current directory in Sublime Text, otherwise
-# opens the given location
+# open in ST3
 function s() {
     if [ $# -eq 0 ]; then
         subl .;
@@ -53,8 +18,7 @@ function s() {
     fi;
 }
 
-# `o` with no arguments opens the current directory, otherwise opens the given
-# location
+# open current w default
 function o() {
     if [ $# -eq 0 ]; then
         open .;
@@ -63,8 +27,75 @@ function o() {
     fi;
 }
 
+# cd auto ls
+alias ll='ls -p'  
+cd() { builtin cd "$@"; ll; }  
+
+# auto cd into new directory
+function mkd() {
+    mkdir -p "$@" && cd "$_";
+}
+
+
+
+###########################
+# CUSTOM ALIAS
+###########################
+
+# terminal 
+alias c="clear"
+alias note="cd ~/Desktop/Skeleton/02_Work/00_Notes; subl ."
+alias work="cd ~/Desktop/Skeleton/02_Work/01_Projects/"
+
+# navigating directories
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias desk="cd ~/Desktop"
+alias profile="source ~/.bash_profile"
+
+# osx 
+alias f='open -a Finder ./'
+alias lock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
+
+# bundler
+alias be='bundle exec'
+alias bi='bundle install'
+alias bu='bundle update'
+alias bl='bundle list'
+
+# Git
+alias gpo='git pull origin master'
+alias gb='git branch -v'
+alias ga="git add ."
+alias gc="git commit -a -m "$1""
+alias gp="git push"
+alias gs="git status"
+alias gm="git merge"
+
+# Meteor
+alias mr="meteor reset"
+alias m="meteor"
+alias book="cd ~/Desktop/Skeleton/02_Work/00_Notes/zMeteorNotes; subl . ; cd ~/Desktop/Skeleton/02_Work/01_Projects/Ryannit; subl . ; open ~/Desktop/DiscoverMeteor.pdf "
+
+    
+
+
+# Kill all the tabs in Chrome to free up memory
+# [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
+alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
+
+
+
+
+
+
+
+
 # $VARIABLE will render before the rest of the command is executed
-echo "Logged in as $USER at $(hostname)"
+# echo "Logged in as $USER at $(hostname)"
+echo "Logged in as NerdLife.IO"
 
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
@@ -75,13 +106,6 @@ test -d "$HOME/.rvm/bin" && PATH="$PATH:$HOME/.rvm/bin"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 # Path for RBENV
 test -d "$HOME/.rbenv/" && PATH="$HOME/.rbenv/bin:$PATH"
-
-
-# Path changes are made non-destructive with PATH=new_path;$PATH   This is like A=A+B so we preserve the old path
-
-# Path order matters, putting /usr/local/bin before /usr/bin
-# ensures brew programs will be seen and used before another program
-# of the same name is called
 
 # Path for brew
 test -d /usr/local/bin && export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
@@ -136,10 +160,5 @@ export GREP_OPTIONS='--color=always'
 
 export PATH=/usr/local/bin:$PATH
 
-# Auto ls on every cd 
-alias ll='ls -p'  
-cd() { builtin cd "$@"; ll; }  
 
-# Open current in finder
-alias f='open -a Finder ./'
 

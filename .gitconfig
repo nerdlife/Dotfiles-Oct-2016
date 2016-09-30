@@ -1,0 +1,9 @@
+[user]
+	name = “nerdlife”
+	email = ryanuriewebdev@gmail.com
+[core]
+	editor = subl -w
+	excludesfile = /Users/stu/.gitignore_global
+[credential]
+	helper = osxkeychain
+
