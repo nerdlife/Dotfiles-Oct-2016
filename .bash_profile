@@ -42,8 +42,10 @@ function mkd() {
 # CUSTOM ALIAS
 ###########################
 
-# terminal 
+# terminal misc
 alias c="clear"
+alias desk="cd ~/Desktop"
+alias profile="source ~/.bash_profile"
 alias note="cd ~/Desktop/Skeleton/02_Work/00_Notes; subl ."
 alias work="cd ~/Desktop/Skeleton/02_Work/01_Projects/"
 
@@ -51,8 +53,7 @@ alias work="cd ~/Desktop/Skeleton/02_Work/01_Projects/"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
-alias desk="cd ~/Desktop"
-alias profile="source ~/.bash_profile"
+
 
 # osx 
 alias f='open -a Finder ./'
@@ -74,27 +75,17 @@ alias gp="git push"
 alias gs="git status"
 alias gm="git merge"
 
+#Rails
+alias rakeall="rake db:drop db:create db:migrate db:seed"
+alias rr="rails s"
+
 # Meteor
 alias mr="meteor reset"
 alias m="meteor"
 alias book="cd ~/Desktop/Skeleton/02_Work/00_Notes/zMeteorNotes; subl . ; cd ~/Desktop/Skeleton/02_Work/01_Projects/Ryannit; subl . ; open ~/Desktop/DiscoverMeteor.pdf "
 
-    
 
-
-# Kill all the tabs in Chrome to free up memory
-# [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
-alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
-
-
-
-
-
-
-
-
-# $VARIABLE will render before the rest of the command is executed
-# echo "Logged in as $USER at $(hostname)"
+# my username will render before the rest of the command is executed
 echo "Logged in as NerdLife.IO"
 
 # Load RVM into a shell session *as a function*
@@ -116,31 +107,30 @@ test -d /usr/local/heroku/ && export PATH="/usr/local/heroku/bin:$PATH"
 git_completion_script=/usr/local/etc/bash_completion.d/git-completion.bash
 test -s $git_completion_script && source $git_completion_script
 
-# A more colorful prompt
-# \[\e[0m\] resets the color to default color
+# colored prompt
 c_reset='\[\e[0m\]'
 #  \e[0;31m\ sets the color to red
 c_path='\[\e[0;31m\]'
-# \e[0;32m\ sets the color to green
+# clean git color to green
 c_git_clean='\[\e[0;32m\]'
-# \e[0;31m\ sets the color to red
+# dirty git color to red
 c_git_dirty='\[\e[0;31m\]'
 
-# PS1 is the variable for the prompt you see everytime you hit enter
+# prompt variable
 PROMPT_COMMAND=$PROMPT_COMMAND' PS1="${c_path}\W${c_reset}$(git_prompt) => "'
 
 export PS1='\n\[\033[0;31m\]\W\[\033[0m\]$(git_prompt)\[\033[0m\]=> '
 
-# determines if the git branch you are on is clean or dirty
+# git branch clean or dirty
 git_prompt ()
 {
-  # Is this a git directory?
+  # git directory?
   if ! git rev-parse --git-dir > /dev/null 2>&1; then
     return 0
   fi
-  # Grab working branch name
+  # git branch name
   git_branch=$(git branch 2>/dev/null| sed -n '/^\*/s/^\* //p')
-  # Clean or dirty branch
+  # clean or dirty branch
   if git diff --quiet 2>/dev/null >&2; then
     git_color="${c_git_clean}"
   else
@@ -157,7 +147,6 @@ alias ls='ls -Gh'
 
 # Force grep to always use the color option and show line numbers
 export GREP_OPTIONS='--color=always'
-
 export PATH=/usr/local/bin:$PATH
 
 
